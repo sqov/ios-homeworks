@@ -17,10 +17,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let profileVC = ProfileViewController()
+        let loginVC = LogInViewController()
+        
         let profileTabBarItem = UITabBarItem()
-        profileVC.title = "Profile"
+        profileVC.title = "Login"
         profileVC.tabBarItem = profileTabBarItem
-        let navControllerProfile = UINavigationController(rootViewController: profileVC)
+        let navControllerLogin = UINavigationController(rootViewController: loginVC)
         
         let feedVC = FeedViewController()
         let feedTabBarItem = UITabBarItem()
@@ -29,8 +31,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let navControllerFeed = UINavigationController(rootViewController: feedVC)
         
         let tabBarController = UITabBarController()
-        tabBarController.viewControllers = [navControllerProfile, navControllerFeed]
-        tabBarController.selectedViewController = navControllerProfile
+        tabBarController.viewControllers = [navControllerLogin, navControllerFeed]
+        tabBarController.selectedViewController = navControllerLogin
         
         
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0107213827E873F10093B716 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0107213727E873F10093B716 /* LoginViewController.swift */; };
 		118E239727BBB7C700CDC8F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118E239627BBB7C700CDC8F2 /* AppDelegate.swift */; };
 		118E239927BBB7C700CDC8F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118E239827BBB7C700CDC8F2 /* SceneDelegate.swift */; };
 		118E239B27BBB7C700CDC8F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 118E239A27BBB7C700CDC8F2 /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0107213727E873F10093B716 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		118E239327BBB7C700CDC8F2 /* IB_INS_HOMEWORK1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IB_INS_HOMEWORK1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		118E239627BBB7C700CDC8F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		118E239827BBB7C700CDC8F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 			children = (
 				118E23E227BE7CF100CDC8F2 /* ProfileViewController.swift */,
 				11D1BC7127D0D19200492967 /* ProfileHeaderView.swift */,
+				0107213727E873F10093B716 /* LoginViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -168,6 +171,7 @@
 				118E23E127BE7CE700CDC8F2 /* FeedViewController.swift in Sources */,
 				118E23E727BE7D2000CDC8F2 /* Post.swift in Sources */,
 				118E23E927BE7D4800CDC8F2 /* InfoViewController.swift in Sources */,
+				0107213827E873F10093B716 /* LoginViewController.swift in Sources */,
 				118E239927BBB7C700CDC8F2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
