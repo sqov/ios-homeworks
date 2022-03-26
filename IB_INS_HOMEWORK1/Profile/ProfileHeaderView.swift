@@ -124,10 +124,11 @@ class ProfileHeaderView: UIView {
             statusTextField.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 20),
             statusTextField.topAnchor.constraint(equalTo: statusLabel.bottomAnchor, constant: 20),
             statusTextField.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -16),
-            statusTextField.heightAnchor.constraint(equalToConstant: 40)
+            statusTextField.heightAnchor.constraint(equalToConstant: 40),
+            
+            setStatusButton.bottomAnchor.constraint(equalTo: self.bottomAnchor)
             
         ])
-        
     }
     
     override func layoutSubviews() {

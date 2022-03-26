@@ -9,45 +9,63 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    var profileCustomView: ProfileHeaderView!
-    var statusText: String?
+    let tableView = UITableView()
+    
+    
+    var images = ["intel.png", "apple.png", "meta.png", "disney.png"]
+    
+    //    override func loadView() {
+    //        super.loadView()
+    //        setupTableView()
+    //    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupTableView()
+        navigationController?.setNavigationBarHidden(true, animated: false)
         
-        self.title = "ProfileVC"
-        profileCustomView = ProfileHeaderView()
-        
-        profileCustomView.backgroundColor = .lightGray
-        profileCustomView.setStatusButton.addTarget(self, action: #selector(buttonPressed), for: .touchUpInside)
-        profileCustomView.statusTextField.addTarget(self, action: #selector(statusTextChanged(_:)), for: UIControl.Event.editingChanged)
-        
-        view.addSubview(profileCustomView)
-        
-        setupContraints()
+        tableView.reloadData()
     }
     
-    @objc func buttonPressed() {
-        profileCustomView.statusLabel.text = statusText
-    }
-    
-    @objc func statusTextChanged(_ textField: UITextField) {
-        self.statusText = textField.text
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        self.profileCustomView.statusTextField.resignFirstResponder()
-    }
-    
-    
-   private func setupContraints() {
-        profileCustomView.translatesAutoresizingMaskIntoConstraints = false
+    func setupTableView() {
+        view.addSubview(tableView)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        tableView.dataSource = self
+        tableView.delegate = self
         
         NSLayoutConstraint.activate([
-            profileCustomView.topAnchor.constraint(equalTo: view.topAnchor),
-            profileCustomView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            profileCustomView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            profileCustomView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.topAnchor.constraint(equalTo: view.topAnchor),
+            tableView.leftAnchor.constraint(equalTo: view.leftAnchor),
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            tableView.rightAnchor.constraint(equalTo: view.rightAnchor)
         ])
+        
+        tableView.register(PostTableViewCell.self, forCellReuseIdentifier: "PostTableViewCell")
+    }
+}
+
+
+extension ProfileViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return images.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell") as? PostTableViewCell
+        
+        let img = images[indexPath.row]
+        
+        cell?.mainPictureImageView.image = UIImage(named: img)
+        
+        return cell ?? UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return section == 0 ? ProfileHeaderView() : nil
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
     }
 }
