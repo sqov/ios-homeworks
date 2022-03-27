@@ -22,7 +22,7 @@ class ProfileHeaderView: UIView {
     }
     
     let avatarImageView: UIImageView = {
-        let catImage = UIImage(named: "cat.jpeg")
+        let catImage = UIImage(named: "cat.jpg")
         let image = UIImageView(image: catImage)
         
         image.layer.borderWidth = 3
