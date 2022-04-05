@@ -75,6 +75,7 @@ class LogInViewController: UIViewController {
     }()
     
     let loginButton: UIButton = {
+        
         let button = UIButton(type: .system)
         button.setTitleColor(.white, for: .normal)
         button.setTitle("Log in", for: .normal)
