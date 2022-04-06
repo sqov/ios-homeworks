@@ -8,10 +8,10 @@
 import UIKit
 
 class LogInViewController: UIViewController {
-    let scrollView = UIScrollView()
-    let contentView = UIView()
-    let stackView = UIStackView()
-    let profileVC = ProfileViewController()
+    let scrollView = UIScrollView(frame: .zero)
+    let contentView = UIView(frame: .zero)
+    let stackView = UIStackView(frame: .zero)
+    let profileVC = ProfileViewController(nibName: nil, bundle: nil)
     
     override func viewDidLoad() {
         super.viewDidLoad()

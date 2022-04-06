@@ -26,7 +26,7 @@ final class PostTableViewCell: UITableViewCell {
     let infoLabel: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.textColor = .systemGray
-        $0.font = UIFont.systemFont(ofSize: 14, weight: .regular)
+        $0.font = .systemFont(ofSize: 14, weight: .regular)
         $0.numberOfLines = 0
         return $0
     }(UILabel(frame: .zero))
@@ -34,7 +34,7 @@ final class PostTableViewCell: UITableViewCell {
     let likesLabel: UILabel = {
         $0.translatesAutoresizingMaskIntoConstraints = false
         $0.textColor = .black
-        $0.font = UIFont.systemFont(ofSize: 16, weight: .regular)
+        $0.font = .systemFont(ofSize: 16, weight: .regular)
         return $0
     }(UILabel(frame: .zero))
     

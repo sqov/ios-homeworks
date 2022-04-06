@@ -40,7 +40,7 @@ final class ProfileHeaderView: UITableViewCell {
         $0.setTitleColor(.white, for: .normal)
         $0.backgroundColor = .blue
         $0.layer.cornerRadius = 10
-        $0.layer.shadowOffset = CGSize(width: 4, height: 4)
+        $0.layer.shadowOffset = CGSize(width: 0, height: 4)
         $0.layer.shadowRadius = 4
         $0.layer.shadowColor = UIColor.black.cgColor
         $0.layer.shadowOpacity = 0.7
@@ -77,6 +77,7 @@ final class ProfileHeaderView: UITableViewCell {
         setupContraints()
         contentView.clipsToBounds = false
         clipsToBounds = false
+        layer.zPosition = 100
     }
     
     required init?(coder: NSCoder) {
@@ -111,7 +112,6 @@ extension ProfileHeaderView {
             statusTextField.leadingAnchor.constraint(equalTo: statusLabel.leadingAnchor),
             contentView.trailingAnchor.constraint(equalTo: statusTextField.trailingAnchor, constant: 16),
             statusTextField.heightAnchor.constraint(equalToConstant: 40),
-            
             
             setStatusButton.topAnchor.constraint(equalTo: statusTextField.bottomAnchor, constant: 20),
             setStatusButton.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
