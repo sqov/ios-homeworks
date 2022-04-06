@@ -12,6 +12,7 @@ final class ProfileTableView: UITableView {
     override init(frame: CGRect, style: UITableView.Style) {
         super.init(frame: frame, style: style)
         register()
+        separatorStyle = .none
     }
     
     required init?(coder: NSCoder) {
@@ -25,7 +26,6 @@ extension ProfileTableView {
     private func register() {
         register(PostTableViewCell.self, forCellReuseIdentifier: "PostCell")
         register(ProfileHeaderView.self, forCellReuseIdentifier: "HeaderViewCell")
+        register(PhotoTableViewCell.self, forCellReuseIdentifier: "PhotoCell")
     }
-    
-    
 }
